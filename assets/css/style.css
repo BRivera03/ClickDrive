@@ -1,0 +1,797 @@
+@import url(clash-display.css);
+
+
+/*Variables*/
+:root {
+    --c-dark: #3F4045;
+    --c-brand: #F55D3E;
+    --c-brand-light: #FF7B60;
+    --c-body: #F2F2F2;
+    --font-base: "ClashDisplay", sans-serif;
+    --box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+    --transition: all 0.5s ease;
+}
+
+/*Defaults and Resets*/
+body {
+    font-family: var(--font-base);
+    line-height: 1.7;
+    color: var(--c-body);
+    background-color: var(--c-body);
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: var(--c-brand);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--c-brand-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+body {
+    background-color: var(--c-dark);
+}
+
+
+
+/*NavBar*/
+
+/* #nav{
+    background-color: rgba(0,0,0,0);
+}
+
+/* .navbar{
+    position: fixed;
+    background-color: var(--c-body);
+} */
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--c-dark)
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--c-brand)
+}
+
+.navbar-brand {
+    color: var(--c-brand);
+    font-family: var(--font-base);
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.nav-link {
+    transition: transform 0.5s;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+}
+
+/*btn*/
+.btn {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 24px;
+}
+
+.btn-brand {
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
+    color: white;
+    border-radius: 15px;
+    transition: transform 0.5s;
+}
+
+.btn-brand:hover {
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: white;
+    transform: scale(1.1);
+}
+
+/*Hero*/
+#hero {
+    background-image: url(../img/lamboHero.jpg);
+    /* background: linear-gradient(rgba(0,0,00.500), rgba(0,0,0,0.400), url(../img/porscheHero.jpg)); */
+    background-position: center;
+    background-size: cover;
+    transform-origin: top;
+
+    animation: hero-animation linear;
+    animation-timeline: view();
+    animation-range: exit 100px;
+}
+
+/* animations for homepage */
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes hero-animation {
+    0% {
+        opacity: 1;
+    }
+
+    85%,
+    100% {
+        opacity: 0;
+        scale: 1.2;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    #heroSubtitle {
+        color: var(--c-body);
+    }
+}
+
+#heroTitle {
+    color: #F55D3E;
+    margin-top: 30%;
+    font-size: 60px;
+}
+
+#heroSubtitle {
+    color: var(--c-dark);
+}
+
+.heroTitle {
+    margin-left: 10%;
+}
+
+/* footer */
+
+.card-footer {
+    background-color: var(--c-brand);
+    color: var(--c-body);
+    border-radius: 15px;
+    border: 2px solid var(--c-brand);
+    box-shadow: 0 0 7px 2px var(--c-brand);
+
+
+}
+
+.row-footer {
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.footerSocials {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.footerSocials li {
+    padding: 15px;
+    flex-wrap: wrap;
+    font-size: 25px;
+}
+
+
+
+.footerLinks {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.footerLinks li {
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+/*CTO*/
+
+#cto {
+    background-image: url(../img/lamboInteriorHero.jfif);
+    background-position: center;
+    background-size: cover;
+}
+
+#rentButton {
+    padding-bottom: 46em;
+
+}
+
+.ctoText {
+    margin-top: 7%;
+    font-size: 5em;
+
+    scale: 0.7;
+    opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: 250px 500px;
+
+}
+
+@keyframes fade-in {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+#indexGTR {
+    /* padding: 100px; */
+    width: 100%;
+    z-index: -1;
+}
+
+
+
+
+
+/*Car Show*/
+#carTeaserText {
+    color: var(--c-brand);
+    text-align: center;
+    padding-top: 50px;
+    font-size: 5em;
+}
+
+
+/*Cards Styling*/
+.card {
+    border-style: none;
+
+}
+
+.card-title-fleet {
+    color: var(--c-brand);
+}
+
+.carsCards-fleet {
+    flex: 1 1 300px;
+    /* Adjust the width as needed */
+    margin: 10px;
+
+}
+
+.card-img-fleet {
+    width: 600px;
+    height: auto;
+}
+
+/*fleet*/
+.search {
+    color: #F55D3E;
+    padding-top: 6%;
+}
+
+.containerFleet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.fleetTitle {
+    text-align: center;
+    cursor: pointer;
+}
+
+.col-Fleet {
+    border-radius: 20px;
+
+}
+
+.col-Fleet img {
+
+    width: 300px;
+    height: 600px;
+    transition: 0.5s ease;
+    object-fit: cover;
+    z-index: -1;
+    padding: 20px;
+
+}
+
+.col-Fleet img:hover {
+    box-shadow: 0, 3px 6px rgba(0, 0, 0, 0.16),
+        0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+}
+
+/*Nissan Page*/
+
+.heroTitleNissan {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13em;
+
+}
+
+#CarCatalog {
+    margin-top: 10%;
+    color: var(--c-brand);
+    font-size: 5em;
+    text-align: center;
+}
+
+#CarCol {
+    padding: 25px;
+    box-shadow: inset;
+}
+
+.col h4 {
+    text-align: center;
+    color: var(--c-dark);
+}
+
+/*Rentals*/
+
+.ctoTextRent {
+    text-align: center;
+    color: #F55D3E;
+    margin-top: 3%;
+
+}
+
+.car-container-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carsCards {
+    flex: 1 1 300px;
+    /* Adjust the width as needed */
+    margin: 10px;
+}
+
+
+/* .car-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carsCards {
+    flex: 1 1 300px;
+
+    margin: 10px;
+} */
+
+/* 
+.priceButton {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 15px;
+}
+
+#pageInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.card-img {
+    width: 450px;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 28px;
+}
+
+
+video {
+    z-index: -1;
+    object-fit: cover;
+    /* width: 100vw;
+    height: 100vh; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+
+/*pricing*/
+
+.pricing {
+    color: var(--c-brand);
+    cursor: pointer;
+}
+
+.pricing-cols {
+    display: grid;
+    /* wrap display grids */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    text-align: center;
+    font-size: 35px;
+    height: 1000px;
+}
+
+.text {
+    margin-top: 50%;
+    transition: transform 1s ease-in;
+}
+
+.text:hover {
+    transform: scale(1.05);
+}
+
+.duration {
+    font-size: 50px;
+}
+
+
+
+
+
+/*Index Carousel*/
+
+.slidesTitle {
+    color: var(--c-brand);
+    font-size: 3em;
+}
+
+
+#blur {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+
+
+
+/*card styling in rent.html*/
+.custom-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    margin-top: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card-title-fleet {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.custom-card img {
+    width: 300px;
+    height: auto;
+    margin-right: 16px;
+}
+
+.card-details {
+    flex: 1;
+    padding-right: 16px;
+    padding-left: 16px;
+
+}
+
+.price-section {
+    text-align: right;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.total-price {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-reserve {
+    background-color: var(--c-brand);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: transform .5s;
+
+
+}
+
+.btn-reserve:hover {
+    transform: scale(1.1);
+
+}
+
+
+/*sign in styling*/
+.signInNav {
+    color: #F55D3E;
+    padding: 10px;
+}
+
+.signHero {
+    background-image: url(../img/supraHero.jpg);
+    background-position: center;
+    background-size: cover;
+
+
+}
+
+.transbox {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+
+.bod {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Jost', sans-serif;
+}
+
+.main {
+    width: 350px;
+    height: 500px;
+    background: var(--c-body);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+}
+
+#chk {
+    display: none;
+}
+
+.signup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    color: var(--c-dark);
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+input {
+    width: 60%;
+    height: 10px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.logButton {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: var(--c-brand);
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+.logButton:hover {
+    background: var(--c-dark);
+}
+
+.login {
+    height: 460px;
+    background: var(--c-dark);
+    border-radius: 60% / 10%;
+    transform: translateY(-180px);
+    transition: .8s ease-in-out;
+}
+
+.login label {
+    color: var(--c-body);
+    transform: scale(.6);
+}
+
+#chk:checked~.login {
+    transform: translateY(-500px);
+}
+
+#chk:checked~.login label {
+    transform: scale(1);
+}
+
+#chk:checked~.signup label {
+    transform: scale(.6);
+}
+
+
+
+
+
+/* <!--overwrite existing card class styles --> */
+/* 
+.Nissan {
+    background-color: var(--c-dark);
+} */
+#container-fleet {
+    background-color: var(--c-dark);
+    border: none;
+}
+
+.card-img-fleet {
+    width: 500px;
+    height: auto;
+    justify-content: center;
+}
+
+
+
+/*card styling in fleet pages.html*/
+.custom-card-fleet {
+    padding: 16px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    box-shadow: inset;
+    transition: transform .5s;
+    /* Animation */
+
+}
+
+.custom-card-fleet:hover {
+    transform: scale(1.1);
+
+}
+
+
+.card-title-fleet {
+    cursor: pointer;
+    padding-right: 55px;
+    font-size: 1.5em;
+}
+
+
+
+.card-details {
+    flex: 1;
+    padding-right: 16px;
+    padding-left: 16px;
+
+}
+
+.price-section {
+    text-align: right;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.total-price {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-reserve {
+    background-color: var(--c-brand);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+
+}
+
+/* reserve page */
+.costInfo {
+    padding: 15px;
+}
+
+.costInfo h6 {
+    padding: 15px;
+}
+
+.durationSelect button {
+    margin-right: 6px;
+}
+
+/* .imgReserve {
+    width: 1100px;
+    position: relative;
+    align-items: center;
+} */
+
+#carImg {
+    width: 600px;
+    position: relative;
+    align-items: center;
+}
+
+#calendar {
+    width: 700px;
+    /* height: auto; */
+    display: flex;
+    float: left;
+}
